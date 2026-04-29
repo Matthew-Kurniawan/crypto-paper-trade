@@ -1,0 +1,55 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Virtual env
+.venv/
+venv/
+env/
+
+# Cached / regenerable data — fetcher rebuilds these from Binance public API
+data/raw/*.parquet
+data/processed/sweep/equity/
+data/processed/sweep/sweep_results.csv
+data/processed/sweep/buy_and_hold.csv
+data/processed/walkforward/equity/
+data/processed/walkforward/wf_results.csv
+data/processed/walkforward/wf_with_alpha.csv
+data/processed/walkforward/wf_*_decisions.csv
+data/processed/walkforward_meta/equity/
+data/processed/walkforward_meta/wfm_results.csv
+data/processed/walkforward_meta/wfm_*_decisions.csv
+data/processed/portfolio/*.parquet
+data/processed/portfolio/*.png
+data/processed/portfolio/portfolio_summary.csv
+data/processed/scan/momentum_scan_*.csv
+data/processed/insample_results_*.csv
+data/processed/equity_*.parquet
+data/processed/trades_*.parquet
+data/processed/equity_top*.png
+data/processed/plots/
+
+# Live trading runtime files (regenerated each run; keep state out of git so
+# different machines / sessions don't fight over it)
+data/processed/live/state.json
+data/processed/live/decisions_log.csv
+data/processed/live/dashboard.html
+data/processed/live/*.json
+data/processed/live/*.md
+!data/processed/live/.gitkeep
+
+# Keep directory markers so the layout reproduces on fresh clone
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
