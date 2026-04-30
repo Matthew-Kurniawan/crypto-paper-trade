@@ -32,14 +32,10 @@ data/processed/trades_*.parquet
 data/processed/equity_top*.png
 data/processed/plots/
 
-# Live trading runtime files (regenerated each run; keep state out of git so
-# different machines / sessions don't fight over it)
-data/processed/live/state.json
-data/processed/live/decisions_log.csv
-data/processed/live/dashboard.html
-data/processed/live/*.json
-data/processed/live/*.md
-!data/processed/live/.gitkeep
+# Live trading runtime files: KEPT in git so future Claude sessions and the
+# scheduled GitHub Action see the running state. The Action commits these
+# back after each run.
+# (No exclusion needed — everything in data/processed/live/ is tracked.)
 
 # Keep directory markers so the layout reproduces on fresh clone
 !data/raw/.gitkeep
@@ -53,3 +49,6 @@ data/processed/live/*.md
 # OS
 .DS_Store
 Thumbs.db
+
+# Accidental nested clone of this repo (the actual project IS this directory)
+crypto-paper-trade/

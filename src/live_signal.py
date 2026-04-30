@@ -162,6 +162,8 @@ def run_track(track: dict) -> dict:
         "ok": True,
         "as_of": last_close_time.isoformat(),
         "current_close": cur_close,
+        "current_bar_high": float(train["high"].iloc[-1]),
+        "current_bar_low": float(train["low"].iloc[-1]),
         "current_atr_24h": cur_atr,
         "selected_strategy": strat,
         "selected_params": ps,
@@ -447,9 +449,23 @@ def main():
     report_path = write_report(results, weights)
     save_state(state_path, results)
     append_decisions_log(LIVE_OUT / "decisions_log.csv", results)
+
+    # Reconcile auto-journal — handles new opens, closes, stop-outs, reversals.
+    # On first run (journal empty) we replay decisions_log to bootstrap.
+    from src.journal import reconcile as reconcile_journal, bootstrap_from_decisions_log
+    journal_path = LIVE_OUT / "paper_trade_journal.csv"
+    bootstrapped = bootstrap_from_decisions_log(LIVE_OUT / "decisions_log.csv", journal_path)
+    if bootstrapped > 0:
+        print(f"  Journal bootstrap: replayed {bootstrapped} entries from decisions_log")
+    journal_summary = reconcile_journal(results, journal_path)
+    print(f"\nJournal: opened={journal_summary['opened']}, "
+          f"closed={journal_summary['closed']}, stopped={journal_summary['stopped']}, "
+          f"rows={journal_summary['total_rows']}")
+
     print(f"\nReport saved -> {report_path.relative_to(PROJECT_ROOT)}")
     print(f"State updated -> {state_path.relative_to(PROJECT_ROOT)}")
     print(f"Decisions logged -> {(LIVE_OUT / 'decisions_log.csv').relative_to(PROJECT_ROOT)}")
+    print(f"Journal -> {journal_path.relative_to(PROJECT_ROOT)}")
 
     # Generate the visual dashboard for easy daily review
     try:
