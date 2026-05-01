@@ -1,5 +1,49 @@
-Live signal run @ 2026-05-01T04:42:44.990819+00:00
+Live signal run @ 2026-05-01T06:22:27.554258+00:00
   Loaded prior state for 5 assets
 
 [BTCUSDT 1d spot long_only]
   no cache, fetching from 2020-01-01 00:00:00+00:00
+  fetched 2,313 new bars
+  saved 2,313 bars to data/raw/btcusdt_spot_1d.parquet
+  trailing-365d best: tsmom lb96h  train Sharpe=-0.14  trades=3  in_market=94%
+
+[ETHUSDT 1d spot long_only]
+  no cache, fetching from 2020-01-01 00:00:00+00:00
+  fetched 2,313 new bars
+  saved 2,313 bars to data/raw/ethusdt_spot_1d.parquet
+  trailing-365d best: tsmom lb720h  train Sharpe=0.05  trades=3  in_market=78%
+
+[SOLUSDT 1d spot long_only]
+  no cache, fetching from 2020-01-01 00:00:00+00:00
+  fetched 2,090 new bars
+  saved 2,090 bars to data/raw/solusdt_spot_1d.parquet
+  trailing-365d best: meanrev w336h_z2.0_x0.0  train Sharpe=-0.22  trades=2  in_market=86%
+
+[TRXUSDT 1d spot long_only]
+  no cache, fetching from 2020-01-01 00:00:00+00:00
+  fetched 2,313 new bars
+  saved 2,313 bars to data/raw/trxusdt_spot_1d.parquet
+  trailing-365d best: meanrev w336h_z2.0_x0.0  train Sharpe=0.16  trades=2  in_market=64%
+
+[RENDERUSDT 1d spot long_only]
+  no cache, fetching from 2020-01-01 00:00:00+00:00
+  fetched 645 new bars
+  saved 645 bars to data/raw/renderusdt_spot_1d.parquet
+  trailing-365d best: tsmom lb168h  train Sharpe=-0.20  trades=6  in_market=87%
+
+Inverse-vol weights:
+  TRXUSDT      39.9%
+  BTCUSDT      19.0%
+  SOLUSDT      15.4%
+  ETHUSDT      14.3%
+  RENDERUSDT   11.4%
+
+Journal: opened=0, closed=0, stopped=0, rows=1
+
+Report saved -> data/processed/live/2026-05-01.md
+State updated -> data/processed/live/state.json
+Decisions logged -> data/processed/live/decisions_log.csv
+Journal -> data/processed/live/paper_trade_journal.csv
+Dashboard -> data/processed/live/dashboard.html
+
+No position changes — hold steady.
