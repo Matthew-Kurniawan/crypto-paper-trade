@@ -34,31 +34,36 @@ jobs:
 
       - name: Run live signal
         id: signal
+        shell: bash
         run: |
-          python -m src.live_signal | tee live_signal_stdout.txt
-          # Detect flips by looking at the last run's rows in decisions_log
-          python -c "
-          import pandas as pd, json, os
+          set -euo pipefail
+          # Capture stdout/stderr but propagate live_signal's exit code
+          python -m src.live_signal 2>&1 | tee live_signal_stdout.txt
+          # Sanity-check that the run actually completed
+          if [ ! -f data/processed/live/dashboard.html ]; then
+            echo "::error::dashboard.html missing — live_signal did not complete"
+            exit 1
+          fi
+
+          # Detect flips and emit step outputs (heredoc avoids quote-escaping hell)
+          python <<'PY' >> "$GITHUB_OUTPUT"
+          import pandas as pd
           df = pd.read_csv('data/processed/live/decisions_log.csv')
           today = df[df['run_ts'] == df['run_ts'].max()]
           flips = today[today['is_flip'] == 1]
-          summary = {'has_flip': bool(len(flips) > 0)}
           if len(flips):
               parts = []
               for _, r in flips.iterrows():
-                  cur = int(r['current_signal']); prior = '-'
-                  word = {1: 'LONG', 0: 'FLAT', -1: 'SHORT'}[cur]
-                  parts.append(f\"{r['asset']}: {word}\")
-              summary['summary'] = '; '.join(parts)
-              summary['count'] = len(flips)
+                  word = {1: 'LONG', 0: 'FLAT', -1: 'SHORT'}[int(r['current_signal'])]
+                  parts.append(f"{r['asset']}: {word}")
+              print("has_flip=true")
+              print(f"flip_summary={'; '.join(parts)}")
+              print(f"flip_count={len(flips)}")
           else:
-              summary['summary'] = ''
-              summary['count'] = 0
-          with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
-              f.write(f\"has_flip={'true' if summary['has_flip'] else 'false'}\n\")
-              f.write(f\"flip_summary={summary['summary']}\n\")
-              f.write(f\"flip_count={summary['count']}\n\")
-          "
+              print("has_flip=false")
+              print("flip_summary=")
+              print("flip_count=0")
+          PY
 
       - name: Commit and push state changes
         run: |

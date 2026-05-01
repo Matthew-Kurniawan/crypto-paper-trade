@@ -25,7 +25,10 @@ import requests
 PERP_BASE_URL = "https://fapi.binance.com"
 PERP_KLINES_PATH = "/fapi/v1/klines"
 FUNDING_PATH = "/fapi/v1/fundingRate"
-SPOT_BASE_URL = "https://api.binance.com"
+# Use the public read-only mirror for spot. api.binance.com is geo-blocked
+# from some regions (notably US, where GitHub Actions runners live);
+# data-api.binance.vision is the same data, no restrictions, no auth.
+SPOT_BASE_URL = "https://data-api.binance.vision"
 SPOT_KLINES_PATH = "/api/v3/klines"
 SYMBOL = "BTCUSDT"
 DEFAULT_START = "2020-01-01T00:00:00Z"
