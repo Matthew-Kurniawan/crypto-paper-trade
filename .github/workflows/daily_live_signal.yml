@@ -10,11 +10,23 @@ on:
 permissions:
   contents: write     # to commit state changes back to the repo
   issues: write       # to open an Issue when there's an action required
+  pages: write        # to deploy the dashboard to GitHub Pages
+  id-token: write     # required by deploy-pages action
+
+# Avoid concurrent deploys clobbering each other if a manual run happens
+# while the cron is firing.
+concurrency:
+  group: pages
+  cancel-in-progress: false
 
 jobs:
   run-live-signal:
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    outputs:
+      has_flip: ${{ steps.signal.outputs.has_flip }}
+      flip_summary: ${{ steps.signal.outputs.flip_summary }}
+      flip_count: ${{ steps.signal.outputs.flip_count }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -121,3 +133,52 @@ jobs:
             data/processed/live/
             live_signal_stdout.txt
           retention-days: 30
+
+      # ---- Build the static site for GitHub Pages ----
+      # The dashboard becomes the homepage. Daily reports, journal, state
+      # are accessible at predictable paths so you can deep-link from phone.
+      - name: Build _site for GitHub Pages
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p _site
+          cp data/processed/live/dashboard.html _site/index.html
+          # Daily reports + JSON snapshots + journal + decisions log + state
+          cp data/processed/live/*.md _site/ 2>/dev/null || true
+          cp data/processed/live/*.json _site/ 2>/dev/null || true
+          cp data/processed/live/*.csv _site/ 2>/dev/null || true
+          # A tiny info page that lists everything available
+          cat > _site/about.html <<'HTML'
+          <!DOCTYPE html><html><head><meta charset="utf-8"><title>About</title>
+          <style>body{font-family:-apple-system,sans-serif;max-width:700px;margin:2em auto;padding:0 1em;line-height:1.5}</style>
+          </head><body>
+          <h1>Crypto paper-trade dashboard</h1>
+          <p>Auto-generated daily by the <code>daily_live_signal.yml</code> GitHub Actions workflow.</p>
+          <ul>
+            <li><a href="./">Dashboard (homepage)</a></li>
+            <li><a href="./paper_trade_journal.csv">Paper trade journal (CSV)</a></li>
+            <li><a href="./decisions_log.csv">Decisions log (CSV)</a></li>
+            <li><a href="./state.json">Current state (JSON)</a></li>
+          </ul>
+          <p>Source: <a href="https://github.com/Matthew-Kurniawan/crypto-paper-trade">github.com/Matthew-Kurniawan/crypto-paper-trade</a></p>
+          </body></html>
+          HTML
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy-pages:
+    needs: run-live-signal
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
