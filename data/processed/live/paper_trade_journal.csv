@@ -1,3 +1,3 @@
 trade_id,asset,side,opened_run_ts,entry_bar_close_ts,entry_price_recommended,size_units,stop_price,allocated_nav_sgd,selected_strategy,param_label,status,closed_run_ts,exit_bar_close_ts,exit_price_recommended,exit_reason,gross_pnl_sgd,gross_pnl_pct,followed_rules,notes
 1,TRXUSDT,LONG,2026-04-29T05:20:51.266420+00:00,2026-04-29T23:59:59.999000+00:00,0.3217,1246.711613979193,,401.0671262171064,tsmom,lb720h,closed,2026-04-30T15:50:15.241446+00:00,2026-04-30T23:59:59.999000+00:00,0.3257,signal_flip,4.9868,0.012434,,
-2,TRXUSDT,LONG,2026-05-04T04:35:52.032426+00:00,2026-05-04T23:59:59.999000+00:00,0.3379,674.3762348224869,0.3264174055046389,387.179442088749,tsmom,lb720h,open,,,,,,,,
+2,TRXUSDT,LONG,2026-05-04T04:35:52.032426+00:00,2026-05-04T23:59:59.999000+00:00,0.3379,674.3762348224869,0.3264174055046389,387.179442088749,tsmom,lb720h,closed,2026-05-06T04:29:06.055163+00:00,2026-05-06T23:59:59.999000+00:00,0.3434,signal_flip,3.7091,0.00958,,
