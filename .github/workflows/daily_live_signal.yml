@@ -7,6 +7,12 @@ on:
     - cron: "0 1 * * *"
   workflow_dispatch:
 
+# Opt the JS-based actions (checkout, setup-python, configure-pages, etc.)
+# into Node 24 ahead of GitHub's June-2026 forced cutover, so we surface
+# any action incompatibilities now while there's still time to fix them.
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+
 permissions:
   contents: write     # to commit state changes back to the repo
   issues: write       # to open an Issue when there's an action required
