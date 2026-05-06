@@ -8,7 +8,7 @@
     },
     "ok": true,
     "as_of": "2026-05-06T23:59:59.999000+00:00",
-    "current_close": 81465.78,
+    "current_close": 81616.85,
     "current_bar_high": 81760.84,
     "current_bar_low": 80731.14,
     "current_atr_24h": 1524.3721293555168,
@@ -17,7 +17,7 @@
       "lookback_h": 720
     },
     "param_label": "lb720h",
-    "train_sharpe": 0.13293428070400423,
+    "train_sharpe": 0.1389155020556511,
     "train_n_trades": 3,
     "train_in_market_pct": 0.7213114754098361,
     "stand_down": true,
@@ -28,12 +28,12 @@
     "target_units": 0.0,
     "target_notional_sgd": 0.0,
     "stop_price": null,
-    "stop_distance_pct": 3.7423618342708234,
+    "stop_distance_pct": 3.735434850415121,
     "prior_recommended_signal": 0,
     "first_run": false,
-    "asset_realized_vol_60d": 0.39056412208265057,
-    "weight": 0.20195818973622828,
-    "allocated_nav": 201.9581897362283
+    "asset_realized_vol_60d": 0.3907279725601413,
+    "weight": 0.20237813441060942,
+    "allocated_nav": 202.37813441060942
   },
   {
     "track": {
@@ -44,7 +44,7 @@
     },
     "ok": true,
     "as_of": "2026-05-06T23:59:59.999000+00:00",
-    "current_close": 2373.82,
+    "current_close": 2378.3,
     "current_bar_high": 2380.87,
     "current_bar_low": 2355.0,
     "current_atr_24h": 45.30430319513675,
@@ -53,7 +53,7 @@
       "lookback_h": 720
     },
     "param_label": "lb720h",
-    "train_sharpe": 0.22918538887693554,
+    "train_sharpe": 0.23299696396276365,
     "train_n_trades": 2,
     "train_in_market_pct": 0.8360655737704918,
     "stand_down": true,
@@ -64,12 +64,12 @@
     "target_units": 0.0,
     "target_notional_sgd": 0.0,
     "stop_price": null,
-    "stop_distance_pct": 3.8169956605923567,
+    "stop_distance_pct": 3.8098055918207745,
     "prior_recommended_signal": 0,
     "first_run": false,
-    "asset_realized_vol_60d": 0.5308983049503058,
-    "weight": 0.1485738838045728,
-    "allocated_nav": 148.57388380457277
+    "asset_realized_vol_60d": 0.5309896980693724,
+    "weight": 0.14891964653225773,
+    "allocated_nav": 148.91964653225773
   },
   {
     "track": {
@@ -80,10 +80,10 @@
     },
     "ok": true,
     "as_of": "2026-05-06T23:59:59.999000+00:00",
-    "current_close": 87.07,
-    "current_bar_high": 87.51,
+    "current_close": 87.94,
+    "current_bar_high": 87.97,
     "current_bar_low": 86.1,
-    "current_atr_24h": 1.976744508634288,
+    "current_atr_24h": 2.206744508634285,
     "selected_strategy": "meanrev",
     "selected_params": {
       "window_h": 336,
@@ -91,7 +91,7 @@
       "exit_z": 0.0
     },
     "param_label": "w336h_z2.0_x0.0",
-    "train_sharpe": -0.16070948549758496,
+    "train_sharpe": -0.143219940971728,
     "train_n_trades": 2,
     "train_in_market_pct": 0.8688524590163934,
     "stand_down": true,
@@ -102,12 +102,12 @@
     "target_units": 0.0,
     "target_notional_sgd": 0.0,
     "stop_price": null,
-    "stop_distance_pct": 9.081173807898418,
+    "stop_distance_pct": 10.037500607843008,
     "prior_recommended_signal": 0,
     "first_run": false,
-    "asset_realized_vol_60d": 0.5116870137178964,
-    "weight": 0.1541520909405339,
-    "allocated_nav": 154.1520909405339
+    "asset_realized_vol_60d": 0.5133458957492406,
+    "weight": 0.15403804491969225,
+    "allocated_nav": 154.03804491969225
   },
   {
     "track": {
@@ -118,10 +118,10 @@
     },
     "ok": true,
     "as_of": "2026-05-06T23:59:59.999000+00:00",
-    "current_close": 0.3434,
+    "current_close": 0.3422,
     "current_bar_high": 0.3456,
-    "current_bar_low": 0.3429,
-    "current_atr_24h": 0.005460324311920156,
+    "current_bar_low": 0.3419,
+    "current_atr_24h": 0.005960324311920157,
     "selected_strategy": "meanrev",
     "selected_params": {
       "window_h": 336,
@@ -129,23 +129,23 @@
       "exit_z": 0.0
     },
     "param_label": "w336h_z2.0_x0.0",
-    "train_sharpe": 0.4443257214995315,
+    "train_sharpe": 0.4238343146305987,
     "train_n_trades": 2,
     "train_in_market_pct": 0.6502732240437158,
     "stand_down": false,
     "raw_strategy_signal": 0,
     "current_signal": 0,
     "prior_signal": 0,
-    "is_flip": true,
+    "is_flip": false,
     "target_units": 0.0,
     "target_notional_sgd": 0.0,
     "stop_price": null,
-    "stop_distance_pct": 6.360307876435827,
-    "prior_recommended_signal": 1,
+    "stop_distance_pct": 6.967065238948167,
+    "prior_recommended_signal": 0,
     "first_run": false,
-    "asset_realized_vol_60d": 0.20541631345317185,
-    "weight": 0.38398908901513745,
-    "allocated_nav": 383.98908901513744
+    "asset_realized_vol_60d": 0.20627982973953649,
+    "weight": 0.3833375189838319,
+    "allocated_nav": 383.3375189838319
   },
   {
     "track": {
@@ -156,16 +156,16 @@
     },
     "ok": true,
     "as_of": "2026-05-06T23:59:59.999000+00:00",
-    "current_close": 1.917,
-    "current_bar_high": 1.929,
+    "current_close": 1.945,
+    "current_bar_high": 1.957,
     "current_bar_low": 1.88,
-    "current_atr_24h": 0.07546328635263647,
+    "current_atr_24h": 0.08946328635263648,
     "selected_strategy": "tsmom",
     "selected_params": {
       "lookback_h": 720
     },
     "param_label": "lb720h",
-    "train_sharpe": 0.07450585625438713,
+    "train_sharpe": 0.11176907834648578,
     "train_n_trades": 4,
     "train_in_market_pct": 0.5355191256830601,
     "stand_down": true,
@@ -176,11 +176,11 @@
     "target_units": 0.0,
     "target_notional_sgd": 0.0,
     "stop_price": null,
-    "stop_distance_pct": 7.873060652335573,
+    "stop_distance_pct": 9.199309650656708,
     "prior_recommended_signal": 0,
     "first_run": false,
-    "asset_realized_vol_60d": 0.7085235628370047,
-    "weight": 0.11132674650352753,
-    "allocated_nav": 111.32674650352753
+    "asset_realized_vol_60d": 0.7102952840867592,
+    "weight": 0.11132665515360872,
+    "allocated_nav": 111.32665515360873
   }
 ]
