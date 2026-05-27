@@ -1,52 +1,49 @@
-/home/runner/work/crypto-paper-trade/crypto-paper-trade/src/journal.py:296: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
-  journal = pd.concat([journal, pd.DataFrame(new_rows)], ignore_index=True)
-Live signal run @ 2026-05-26T04:56:08.180634+00:00
+Live signal run @ 2026-05-27T05:07:53.169194+00:00
   Loaded prior state for 5 assets
 
 [BTCUSDT 1d spot long_only]
   no cache, fetching from 2020-01-01 00:00:00+00:00
-  fetched 2,338 new bars
-  saved 2,338 bars to data/raw/btcusdt_spot_1d.parquet
-  trailing-365d best: macross f168h_s720h  train Sharpe=-0.07  trades=3  in_market=64%
+  fetched 2,339 new bars
+  saved 2,339 bars to data/raw/btcusdt_spot_1d.parquet
+  trailing-365d best: macross f168h_s720h  train Sharpe=-0.08  trades=3  in_market=65%
 
 [ETHUSDT 1d spot long_only]
   no cache, fetching from 2020-01-01 00:00:00+00:00
-  fetched 2,338 new bars
-  saved 2,338 bars to data/raw/ethusdt_spot_1d.parquet
-  trailing-365d best: tsmom lb720h  train Sharpe=0.06  trades=2  in_market=80%
+  fetched 2,339 new bars
+  saved 2,339 bars to data/raw/ethusdt_spot_1d.parquet
+  trailing-365d best: tsmom lb720h  train Sharpe=0.05  trades=2  in_market=80%
 
 [SOLUSDT 1d spot long_only]
   no cache, fetching from 2020-01-01 00:00:00+00:00
-  fetched 2,115 new bars
-  saved 2,115 bars to data/raw/solusdt_spot_1d.parquet
-  trailing-365d best: meanrev w168h_z2.0_x0.0  train Sharpe=-0.20  trades=2  in_market=91%
+  fetched 2,116 new bars
+  saved 2,116 bars to data/raw/solusdt_spot_1d.parquet
+  trailing-365d best: meanrev w168h_z2.0_x0.0  train Sharpe=-0.21  trades=2  in_market=91%
 
 [TRXUSDT 1d spot long_only]
   no cache, fetching from 2020-01-01 00:00:00+00:00
-  fetched 2,338 new bars
-  saved 2,338 bars to data/raw/trxusdt_spot_1d.parquet
-  trailing-365d best: tsmom lb336h  train Sharpe=1.16  trades=2  in_market=92%
+  fetched 2,339 new bars
+  saved 2,339 bars to data/raw/trxusdt_spot_1d.parquet
+  trailing-365d best: tsmom lb336h  train Sharpe=0.99  trades=2  in_market=96%
 
 [RENDERUSDT 1d spot long_only]
   no cache, fetching from 2020-01-01 00:00:00+00:00
-  fetched 670 new bars
-  saved 670 bars to data/raw/renderusdt_spot_1d.parquet
-  trailing-365d best: tsmom lb720h  train Sharpe=0.51  trades=4  in_market=59%
+  fetched 671 new bars
+  saved 671 bars to data/raw/renderusdt_spot_1d.parquet
+  trailing-365d best: tsmom lb720h  train Sharpe=0.49  trades=4  in_market=59%
 
 Inverse-vol weights:
-  TRXUSDT      40.1%
-  BTCUSDT      20.2%
-  ETHUSDT      15.0%
-  SOLUSDT      14.3%
+  TRXUSDT      41.6%
+  BTCUSDT      19.6%
+  ETHUSDT      14.6%
+  SOLUSDT      13.9%
   RENDERUSDT   10.3%
 
-Journal: opened=1, closed=0, stopped=0, rows=6
+Journal: opened=0, closed=0, stopped=0, rows=6
 
-Report saved -> data/processed/live/2026-05-26.md
+Report saved -> data/processed/live/2026-05-27.md
 State updated -> data/processed/live/state.json
 Decisions logged -> data/processed/live/decisions_log.csv
 Journal -> data/processed/live/paper_trade_journal.csv
 Dashboard -> data/processed/live/dashboard.html
 
-=== ACTION REQUIRED ===
-  RENDERUSDT 1d: +0 -> +1
+No position changes — hold steady.
