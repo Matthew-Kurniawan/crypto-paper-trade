@@ -1,50 +1,50 @@
-Live signal run @ 2026-05-28T05:02:54.344272+00:00
+Live signal run @ 2026-05-29T05:03:37.206298+00:00
   Loaded prior state for 5 assets
 
 [BTCUSDT 1d spot long_only]
   no cache, fetching from 2020-01-01 00:00:00+00:00
-  fetched 2,340 new bars
-  saved 2,340 bars to data/raw/btcusdt_spot_1d.parquet
+  fetched 2,341 new bars
+  saved 2,341 bars to data/raw/btcusdt_spot_1d.parquet
   trailing-365d best: macross f168h_s720h  train Sharpe=-0.11  trades=3  in_market=65%
 
 [ETHUSDT 1d spot long_only]
   no cache, fetching from 2020-01-01 00:00:00+00:00
-  fetched 2,340 new bars
-  saved 2,340 bars to data/raw/ethusdt_spot_1d.parquet
-  trailing-365d best: tsmom lb720h  train Sharpe=0.00  trades=2  in_market=80%
+  fetched 2,341 new bars
+  saved 2,341 bars to data/raw/ethusdt_spot_1d.parquet
+  trailing-365d best: tsmom lb720h  train Sharpe=0.02  trades=2  in_market=80%
 
 [SOLUSDT 1d spot long_only]
   no cache, fetching from 2020-01-01 00:00:00+00:00
-  fetched 2,117 new bars
-  saved 2,117 bars to data/raw/solusdt_spot_1d.parquet
-  trailing-365d best: meanrev w168h_z2.0_x0.0  train Sharpe=-0.26  trades=2  in_market=92%
+  fetched 2,118 new bars
+  saved 2,118 bars to data/raw/solusdt_spot_1d.parquet
+  trailing-365d best: meanrev w168h_z2.0_x0.0  train Sharpe=-0.24  trades=2  in_market=92%
 
 [TRXUSDT 1d spot long_only]
   no cache, fetching from 2020-01-01 00:00:00+00:00
-  fetched 2,340 new bars
-  saved 2,340 bars to data/raw/trxusdt_spot_1d.parquet
-  trailing-365d best: tsmom lb168h  train Sharpe=0.87  trades=2  in_market=98%
+  fetched 2,341 new bars
+  saved 2,341 bars to data/raw/trxusdt_spot_1d.parquet
+  trailing-365d best: tsmom lb96h  train Sharpe=0.69  trades=2  in_market=98%
 
 [RENDERUSDT 1d spot long_only]
   no cache, fetching from 2020-01-01 00:00:00+00:00
-  fetched 672 new bars
-  saved 672 bars to data/raw/renderusdt_spot_1d.parquet
-  trailing-365d best: tsmom lb168h  train Sharpe=0.23  trades=5  in_market=88%
+  fetched 673 new bars
+  saved 673 bars to data/raw/renderusdt_spot_1d.parquet
+  trailing-365d best: tsmom lb168h  train Sharpe=0.21  trades=5  in_market=88%
 
 Inverse-vol weights:
-  TRXUSDT      40.2%
-  BTCUSDT      20.1%
-  ETHUSDT      15.1%
-  SOLUSDT      14.6%
-  RENDERUSDT   10.0%
+  TRXUSDT      35.6%
+  BTCUSDT      21.9%
+  ETHUSDT      16.2%
+  SOLUSDT      15.6%
+  RENDERUSDT   10.7%
 
 Journal: opened=0, closed=1, stopped=0, rows=6
 
-Report saved -> data/processed/live/2026-05-28.md
+Report saved -> data/processed/live/2026-05-29.md
 State updated -> data/processed/live/state.json
 Decisions logged -> data/processed/live/decisions_log.csv
 Journal -> data/processed/live/paper_trade_journal.csv
 Dashboard -> data/processed/live/dashboard.html
 
 === ACTION REQUIRED ===
-  RENDERUSDT 1d: +1 -> +0
+  TRXUSDT 1d: +1 -> +0
