@@ -18,49 +18,49 @@
   if age > pd.Timedelta(days=MAX_STALE_DAYS):
 /home/runner/work/crypto-paper-trade/crypto-paper-trade/src/live_signal.py:107: DeprecationWarning: The 'generic' unit for NumPy timedelta is deprecated, and will raise an error in the future. This includes implicit conversion of bare integers (e.g. `+ 1`).Please use a specific unit instead.
   train_start = train_end - pd.Timedelta(days=TRAIN_DAYS)
-Live signal run @ 2026-07-23T04:01:18.676145+00:00
+Live signal run @ 2026-07-24T03:59:46.398260+00:00
   Loaded prior state for 5 assets
 
 [BTCUSDT 1d spot long_only]
   no cache, fetching from 2020-01-01 00:00:00+00:00
-  fetched 2,396 new bars
-  saved 2,396 bars to data/raw/btcusdt_spot_1d.parquet
+  fetched 2,397 new bars
+  saved 2,397 bars to data/raw/btcusdt_spot_1d.parquet
   trailing-365d best: meanrev w168h_z2.5_x0.5  train Sharpe=-0.70  trades=3  in_market=85%
 
 [ETHUSDT 1d spot long_only]
   no cache, fetching from 2020-01-01 00:00:00+00:00
-  fetched 2,396 new bars
-  saved 2,396 bars to data/raw/ethusdt_spot_1d.parquet
-  trailing-365d best: meanrev w168h_z2.0_x0.0  train Sharpe=-0.44  trades=3  in_market=87%
+  fetched 2,397 new bars
+  saved 2,397 bars to data/raw/ethusdt_spot_1d.parquet
+  trailing-365d best: meanrev w168h_z2.0_x0.0  train Sharpe=-0.48  trades=3  in_market=87%
 
 [SOLUSDT 1d spot long_only]
   no cache, fetching from 2020-01-01 00:00:00+00:00
-  fetched 2,173 new bars
-  saved 2,173 bars to data/raw/solusdt_spot_1d.parquet
-  trailing-365d best: tsmom lb96h  train Sharpe=-0.44  trades=5  in_market=91%
+  fetched 2,174 new bars
+  saved 2,174 bars to data/raw/solusdt_spot_1d.parquet
+  trailing-365d best: tsmom lb96h  train Sharpe=-0.48  trades=5  in_market=92%
 
 [TRXUSDT 1d spot long_only]
   no cache, fetching from 2020-01-01 00:00:00+00:00
-  fetched 2,396 new bars
-  saved 2,396 bars to data/raw/trxusdt_spot_1d.parquet
-  trailing-365d best: donchian in720h_out336h  train Sharpe=0.42  trades=2  in_market=46%
+  fetched 2,397 new bars
+  saved 2,397 bars to data/raw/trxusdt_spot_1d.parquet
+  trailing-365d best: donchian in720h_out336h  train Sharpe=0.43  trades=2  in_market=46%
 
 [RENDERUSDT 1d spot long_only]
   no cache, fetching from 2020-01-01 00:00:00+00:00
-  fetched 728 new bars
-  saved 728 bars to data/raw/renderusdt_spot_1d.parquet
-  trailing-365d best: tsmom lb168h  train Sharpe=-0.18  trades=5  in_market=89%
+  fetched 729 new bars
+  saved 729 bars to data/raw/renderusdt_spot_1d.parquet
+  trailing-365d best: tsmom lb168h  train Sharpe=-0.19  trades=5  in_market=90%
 
 Inverse-vol weights:
-  TRXUSDT      35.1%
-  BTCUSDT      22.8%
+  TRXUSDT      35.0%
+  BTCUSDT      22.9%
   ETHUSDT      15.8%
   SOLUSDT      15.1%
   RENDERUSDT   11.1%
 
 Journal: opened=0, closed=0, stopped=0, rows=11
 
-Report saved -> data/processed/live/2026-07-23.md
+Report saved -> data/processed/live/2026-07-24.md
 State updated -> data/processed/live/state.json
 Decisions logged -> data/processed/live/decisions_log.csv
 Journal -> data/processed/live/paper_trade_journal.csv
